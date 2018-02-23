@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up/Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/bootstrap.min.css" />
+        <link rel="stylesheet" href="styles/fontawesome-all.min.css" />
+        <link rel="stylesheet" href="styles/styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="form sign-in">
+                <h3>Welcome back</h3>
+				<form id="loginForm" class="app-form" novalidate>
+					<div class="form-group">
+					  <label class="sr-only" for="loginEmail">Email Address</label>
+					  <div class="input-icon">
+						<i class="fa fa-at"></i>
+					  </div>
+					  <input
+						type="email"
+						name="loginEmail"
+						id="loginEmail"
+						class="form-control form-control-lg"
+						placeholder="Email address"
+						value="" />
+					</div>
+					<div class="form-group">
+					  <label class="sr-only" for="registerPassword">Password</label>
+					  <div class="input-icon">
+						<i class="fa fa-key"></i>
+					  </div>
+					  <input
+						type="password"
+						name="loginPassword"
+						id="loginPassword"
+						class="form-control form-control-lg"
+						placeholder="Password"
+						value="" />
+					</div>
+					<div class="form-row">
+						<div class="col-8 text-center link-sign-up">
+							<a href="#">Not a member? Sign up!</a></button>
+						</div>
+						<div class="col-4 text-right">
+							<input id="loginBtn" class="btn btn-primary mb-2" type="submit" value="Login" />
+						</div>
+					</div>
+				</form>
+				<div class="post-container-sign-in">
+					<div class="row">
+						<div class="col-12">
+							<p class="logged-in alert alert-success" role="alert">
+								You are now logged in.
+							</p>
+							<p class="login-error alert alert-danger" role="alert">
+							  Your email address or password were incorrect.
+						  	</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 text-right">
+							<button id="returnToLogin" class="btn btn-primary mb-2 success login-error">Return to Login</button>
+							<button id="continueToSite" class="btn btn-primary mb-2 logged-in">Continue to Site</button>
+						</div>
+					</div>
+				</div>
+            </div>
+            <div class="sub-cont">
+                <div class="img">
+                    <div class="img__text m--up">
+                        <h2>New to allbirds?</h2>
+                        <p>Sign up to join our family!</p>
+                    </div>
+                    <div class="img__text m--in">
+                        <h2>One of us?</h2>
+                        <p>If you already has an account, just sign in. We've missed you!</p>
+                    </div>
+					<div class="toggle-btn">
+                        <span class="m--up">Sign Up</span>
+                        <span class="m--in">Sign In</span>
+                    </div>
+					<div class="row clear-storage">
+						<div class="col text-center">
+							<button type="button" id="clear" class="btn btn-danger btn-sm">Clear Local Storage</button>
+						</div>
+					</div>
+                </div>
+                <div class="form sign-up">
+					<form id="registerForm" class="app-form" novalidate>
+						<h3>We're glad you're joining us.</h3>
+						<p><strong>All fields are required.</strong></p>
+
+						<div class="name-password-reg">
+					        <div class="form-group">
+					          <label class="sr-only" for="registerFirstName">First Name</label>
+					          <div class="input-icon">
+					            <i class="fa fa-user"></i>
+					          </div>
+					          <input
+							  	data-error-msg="Please enter at least 3 letters."
+					              type="text"
+					              name="registerFirstName"
+					              id="registerFirstName"
+					              class="form-control form-control-lg"
+								  pattern="^([a-zA-Z0-9_-]){3,30}$"
+					              placeholder="First Name"
+					              value="" />
+					        </div>
+					        <div class="form-group">
+					          <label class="sr-only" for="registerLastName">Last Name</label>
+					          <div class="input-icon">
+					            <i class="fa fa-user"></i>
+					          </div>
+					            <input
+									data-error-msg="Please enter at least 3 letters."
+					                type="text"
+					                name="registerLastName"
+					                id="registerLastName"
+					                class="form-control form-control-lg"
+									pattern="^([a-zA-Z0-9_-]){3,30}$"
+					                placeholder="Last Name"
+					                title="Please enter your last name"
+					                value="" />
+					        </div>
+					        <div class="form-group">
+					          <label class="sr-only" for="registerEmail">Email Address</label>
+					          <div class="input-icon">
+					            <i class="fa fa-at"></i>
+					          </div>
+					          <input
+							  	data-error-msg="Please enter a vaid email address."
+					            type="email"
+					            name="registerEmail"
+					            id="registerEmail"
+					            class="form-control form-control-lg"
+								pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
+								placeholder="Email address"
+					            value="" />
+					        </div>
+					        <div class="form-group">
+					          <label class="sr-only" for="registerPassword">Password</label>
+					          <div class="input-icon">
+					            <i class="fa fa-key"></i>
+					          </div>
+					          <input
+							  	data-error-msg="Passwords must include at least 1 uppercase character, 1 lowercase character and 1 number."
+					            type="password"
+					            name="registerPassword"
+					            id="registerPassword"
+					            class="form-control form-control-lg"
+								pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+					            placeholder="Password"
+								value="" />
+					        </div>
+					        <div class="form-group">
+					          <label class="sr-only" for="registerConfirmPassword">Password</label>
+					          <div class="input-icon">
+					            <i class="fa fa-key"></i>
+					          </div>
+					          <input
+							  	data-error-msg="Passwords must match."
+					            type="password"
+					            name="registerConfirmPassword"
+					            id="registerConfirmPassword"
+					            class="form-control form-control-lg"
+								pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+					            value=""
+					            placeholder="Confirm Password" />
+					        </div>
+							<div class="form-group form-check">
+							  <input class="form-check-input" type="checkbox" value="" id="emailList">
+							  <label class="form-check-label" for="emailList">
+							    Sign me up for the weekly newsletter.
+							  </label>
+							</div>
+							<div class="form-row next-button">
+								<div class="col-8 text-center link-sign-in">
+									<a href="#">Already a member? Sign in!</a></button>
+								</div>
+								<div class="col-4 text-right">
+									<button id="nextBtn" class="btn btn-primary mb-2">Next</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="address-group">
+							<div class="form-group">
+					          <label class="sr-only" for="registerAddress1">Address 1</label>
+					          <div class="input-icon">
+					            <i class="fa fa-key"></i>
+					          </div>
+					          <input
+							  	data-error-msg="Invalid address."
+					            type="text"
+					            name="registerAddress1"
+					            id="registerAddress1"
+					            class="form-control form-control-lg"
+								pattern="^([a-zA-Z0-9_-]){3,30}$"
+					            value=""
+					            placeholder="Enter Address" />
+					        </div>
+							<div class="form-group">
+					          <label class="sr-only" for="registerCity">City</label>
+					          <div class="input-icon">
+					            <i class="fa fa-key"></i>
+					          </div>
+					          <input
+							  	data-error-msg="Invalid City."
+					            type="text"
+					            name="registerCity"
+					            id="registerCity"
+					            class="form-control form-control-lg"
+								pattern="^([a-zA-Z0-9_-]){3,30}$"
+					            value=""
+					            placeholder="Enter City" />
+					        </div>
+							<div class="form-group">
+					          <label class="sr-only" for="registerState">State</label>
+					          <div class="input-icon">
+					            <i class="fa fa-key"></i>
+					          </div>
+					          <input
+							  	data-error-msg="Invalid State."
+					            type="text"
+					            name="registerState"
+					            id="registerState"
+					            class="form-control form-control-lg"
+								pattern="^([a-zA-Z0-9_-]){2,}$"
+					            value=""
+					            placeholder="Enter State" />
+					        </div>
+							<div class="form-group">
+					          <label class="sr-only" for="registerZip">Zip</label>
+					          <div class="input-icon">
+					            <i class="fa fa-key"></i>
+					          </div>
+					          <input
+							  	data-error-msg="Invalid Zip."
+					            type="text"
+					            name="registerZip"
+					            id="registerZip"
+					            class="form-control form-control-lg"
+								pattern="^[0-9]{5,}$"
+					            value=""
+					            placeholder="Enter Zip" />
+					        </div>
+							<div class="form-row">
+								<div class="col-8">
+									<button id="prevBtn" class="btn btn-primary mb-2">Previous</button>
+								</div>
+								<div class="col-4 text-right">
+									<input id="registerBtn" class="btn btn-primary mb-2" type="submit" value="Register" />
+								</div>
+							</div>
+						</div>
+				    </form>
+
+					<div class="post-container-sign-up">
+						<div class="row">
+							<div class="col-12">
+								<p class="success alert alert-success" role="alert">
+									Thanks for registering! Please login
+								</p>
+								<p class="alert alert-danger exists" role="alert">
+								  This user already exists. Please register using a different email address.
+							  	</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 text-right">
+								<button id="return" class="btn btn-primary mb-2 exists">Return to Registration</button>
+								<button id="returnToLogin" class="btn btn-primary mb-2 success login-error">Return to Login</button>
+							</div>
+						</div>
+					</div>
+
+                </div>
+            </div>
+        </div>
+		<script src="js/jquery-3.3.1.min.js"></script>
+  	  	<script src="js/signup.js"></script>
+    </body>
+</html>
